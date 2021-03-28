@@ -17,7 +17,6 @@
 
 body {
   padding: 1em 10px;
-  text-align: center;
   background-color: #e1f5fe;
   display: flex;
   align-items: center;
@@ -32,17 +31,22 @@ body {
 
 .header__title {
   text-align: center;
+  font-family: serif;
+  font-size: 3rem;
+  color: #e76f51;
 }
 
 .slideshow {
   position: relative;
+  width: 100%;
+  max-width: 600px;
+  height: 400px;
 }
 
 .slideshow-container {
-  margin: 0 auto;
   display: flex;
-  max-width: 600px;
-  height: 400px;
+  width: 100%;
+  height: 100%;
   overflow: hidden;
   border: 1px solid black;
   background-color: #ebebeb;
@@ -95,11 +99,12 @@ img {
 
 .btn {
   position: absolute;
-  background-color: rgba(0, 0, 0, 0.4);
+  background-color: rgba(0, 0, 0, 0.15);
   color: #ebebeb;
   border: none;
   cursor: pointer;
   transition: background-color 400ms;
+  border-radius: 5px;
 }
 
 .btn:hover {
@@ -118,10 +123,39 @@ img {
 
 .btn-left {
   left: 0;
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+}
+
+.btn-direct::before,
+.btn-direct::after {
+  content: "";
+  display: inline-block;
+  width: 20px;
+  height: 3px;
+  background-color: white;
+}
+
+.btn-left::before {
+  transform: rotate(135deg) translateX(3px);
+}
+
+.btn-left::after {
+  transform: rotate(45deg) translateX(-3px);
 }
 
 .btn-right {
   right: 0;
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+.btn-right::before {
+  transform: rotate(45deg) translateX(3px);
+}
+
+.btn-right::after {
+  transform: rotate(135deg) translateX(-3px);
 }
 
 .btn-random {
@@ -129,10 +163,5 @@ img {
   margin-top: 1em;
   height: 35px;
   width: 70px;
-}
-
-.btn-random::after {
-  opacity: 1;
-  content: "Random";
-  z-index: 5;
+  color: #888;
 }
