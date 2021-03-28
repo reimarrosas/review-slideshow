@@ -36,11 +36,14 @@ body {
 
 .slideshow {
   position: relative;
+}
+
+.slideshow-container {
   margin: 0 auto;
   display: flex;
   max-width: 600px;
   height: 400px;
-  overflow: scroll;
+  overflow: hidden;
   border: 1px solid black;
   background-color: #ebebeb;
 }
@@ -101,6 +104,10 @@ img {
 
 .btn:hover {
   background-color: rgba(0, 0, 0, 0.8);
+}
+
+.btn:focus {
+  outline: none;
 }
 
 .btn-direct {
